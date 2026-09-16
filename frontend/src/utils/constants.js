@@ -1,7 +1,14 @@
 const hostname = typeof window !== 'undefined' ? window.location.hostname : 'localhost';
 
-export const API_BASE_URL = `http://${hostname}:8000`;
-export const WS_BASE_URL = `ws://${hostname}:8000`;
+export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL 
+  || (hostname.includes('vercel.app') ? 'https://ar-care-backend.onrender.com'
+  : hostname.includes('lhr.life') || hostname.includes('loca.lt') ? `${window.location.protocol}//${hostname}`
+  : `http://${hostname}:8000`);
+
+export const WS_BASE_URL = import.meta.env.VITE_WS_BASE_URL
+  || (hostname.includes('vercel.app') ? 'wss://ar-care-backend.onrender.com'
+  : hostname.includes('lhr.life') || hostname.includes('loca.lt') ? `${window.location.protocol === 'https:' ? 'wss:' : 'ws:'}//${hostname}`
+  : `ws://${hostname}:8000`);
 
 export const CASE_STATUS = {
   NEW: 'NEW',
