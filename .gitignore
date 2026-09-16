@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+.venv/
+venv/
+ENV/
+
+# Build outputs
+frontend/dist/
+frontend/build/
+generated_reports/
+
+# Environment files
+.env
+*.env.local
+
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# OS metadata
+.DS_Store
+Thumbs.db

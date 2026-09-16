@@ -1,0 +1,9 @@
+/* Session room styling */
+.camera-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #020617;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
